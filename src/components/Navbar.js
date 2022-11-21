@@ -1,7 +1,9 @@
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState} from "react";
 const Navbar = () => {
 
+    // eslint-disable-next-line no-unused-vars
     let categories = [
         "Gen1",
         "Gen2",
@@ -12,10 +14,12 @@ const Navbar = () => {
         "Gen7",
       ];
     
+      // eslint-disable-next-line no-unused-vars
       const [search, setSearch] = useState();
       const [sideNavOpen, setSideNavOpen] = useState(false);
   
   
+      // eslint-disable-next-line no-unused-vars
       const searchPoke = (e) => {
         if (e.keyn === "Enter") {
           e.preventDefault();
