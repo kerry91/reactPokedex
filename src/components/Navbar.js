@@ -1,52 +1,41 @@
-
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState} from "react";
+import React, { useState } from "react";
 const Navbar = () => {
+  // eslint-disable-next-line no-unused-vars
+  let categories = ["Gen1", "Gen2", "Gen3", "Gen4", "Gen5", "Gen6", "Gen7"];
 
-    // eslint-disable-next-line no-unused-vars
-    let categories = [
-        "Gen1",
-        "Gen2",
-        "Gen3",
-        "Gen4",
-        "Gen5",
-        "Gen6",
-        "Gen7",
-      ];
-    
-      // eslint-disable-next-line no-unused-vars
-      const [search, setSearch] = useState();
-      const [sideNavOpen, setSideNavOpen] = useState(false);
-  
-  
-      // eslint-disable-next-line no-unused-vars
-      const searchPoke = (e) => {
-        if (e.keyn === "Enter") {
-          e.preventDefault();
-          setSearch("");
-        }
-      };
-    
-      const toggleSideMenu = () => {
-        setSideNavOpen(!sideNavOpen);
-      };
+  // eslint-disable-next-line no-unused-vars
+  const [search, setSearch] = useState();
+  const [sideNavOpen, setSideNavOpen] = useState(false);
 
-    return(
-        <>
-        <div className="header">
-          <div className="logo">Pokedex</div>
-          <nav>
-            <div
-              className={sideNavOpen ? "wrapper-menu open" : "wrapper-menu"}
-              id="toggle-menu"
-              onClick={toggleSideMenu}
-            >
-              <div className="line-menu half start"></div>
-              <div className="line-menu"></div>
-              <div className="line-menu half end"></div>
-            </div>
-            <div className={sideNavOpen ? "nav" : "nav hide"} id="side-nav">
-              {/*
+  // eslint-disable-next-line no-unused-vars
+  const searchPoke = (e) => {
+    if (e.keyn === "Enter") {
+      e.preventDefault();
+      setSearch("");
+    }
+  };
+
+  const toggleSideMenu = () => {
+    setSideNavOpen(!sideNavOpen);
+  };
+
+  return (
+    <>
+      <div className="header">
+        <div className="logo">Pokedex</div>
+        <nav>
+          <div
+            className={sideNavOpen ? "wrapper-menu open" : "wrapper-menu"}
+            id="toggle-menu"
+            onClick={toggleSideMenu}
+          >
+            <div className="line-menu half start"></div>
+            <div className="line-menu"></div>
+            <div className="line-menu half end"></div>
+          </div>
+          <div className={sideNavOpen ? "nav" : "nav hide"} id="side-nav">
+            {/*
               <form>
                 <div className="search-btn">
                   <input
@@ -89,8 +78,8 @@ const Navbar = () => {
                 </div>
               </div>
                   */}
-            </div>
-            {/*
+          </div>
+          {/*
             <div className="dropdown-main">
               <div className="dropdown">
                 <button className="dropbtn">
@@ -134,10 +123,10 @@ const Navbar = () => {
               </form>
             </div>
                 */}
-          </nav>
-        </div>
-        </>
-    )
-}
+        </nav>
+      </div>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
