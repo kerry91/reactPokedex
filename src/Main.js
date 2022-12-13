@@ -62,7 +62,6 @@ const Main = () => {
         {pokemonData.map((pokemon, i) => {
           return <Card key={i} pokemon={pokemon} />;
         })}
-        
       </div>
       <div className="pagination">
         <button class="pbutton" onClick={prev}>
