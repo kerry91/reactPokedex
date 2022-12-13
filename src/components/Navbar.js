@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-const Navbar = () => {
+
+const Navbar = (pokemon) => {
   // eslint-disable-next-line no-unused-vars
   let categories = ["Gen1", "Gen2", "Gen3", "Gen4", "Gen5", "Gen6", "Gen7"];
 
@@ -8,22 +9,16 @@ const Navbar = () => {
   const [search, setSearch] = useState();
   const [sideNavOpen, setSideNavOpen] = useState(false);
 
-  // eslint-disable-next-line no-unused-vars
-  const searchPoke = (e) => {
-    if (e.keyn === "Enter") {
-      e.preventDefault();
-      setSearch("");
-    }
-  };
 
   const toggleSideMenu = () => {
     setSideNavOpen(!sideNavOpen);
   };
 
+
   return (
     <>
       <div className="header">
-        <div className="logo">Pokedex</div>
+        <div className="logo">Pokedex</div> 
         <nav>
           <div
             className={sideNavOpen ? "wrapper-menu open" : "wrapper-menu"}
@@ -35,21 +30,6 @@ const Navbar = () => {
             <div className="line-menu half end"></div>
           </div>
           <div className={sideNavOpen ? "nav" : "nav hide"} id="side-nav">
-            {/*
-              <form>
-                <div className="search-btn">
-                  <input
-                    type="text"
-                    placeholder="Enter Pokemon Name"
-                    className="inputText"
-                    onChange={(e) => {
-                      setSearch(e.target.value);
-                    }}
-                    value={search}
-                    onKeyPress={searchPoke}
-                  ></input>
-                </div>
-              </form>
               
               <div className="dropdown">
                 <button className="dropbtn">
@@ -77,9 +57,9 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-                  */}
+                  
           </div>
-          {/*
+          
             <div className="dropdown-main">
               <div className="dropdown">
                 <button className="dropbtn">
@@ -107,22 +87,8 @@ const Navbar = () => {
                   </ul>
                 </div>
               </div>
-              <form>
-                <div className="search-btn">
-                  <input
-                    type="text"
-                    placeholder="Enter Pokemon Name"
-                    className="inputText"
-                    onChange={(e) => {
-                      setSearch(e.target.value);
-                    }}
-                    value={search}
-                    onKeyPress={searchPoke}
-                  ></input>
-                </div>
-              </form>
             </div>
-                */}
+             
         </nav>
       </div>
     </>
