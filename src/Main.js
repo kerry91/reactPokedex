@@ -8,6 +8,7 @@ const Main = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [nextUrl, setNextUrl] = useState("");
   const [prevUrl, setPrevUrl] = useState("");
+ 
   // eslint-disable-next-line no-unused-vars
   const initialURL = "https://pokeapi.co/api/v2/pokemon";
 
