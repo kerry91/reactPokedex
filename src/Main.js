@@ -47,6 +47,11 @@ const Main = () => {
     setPokemonData(_pokemonData);
   };
 
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
   return (
     <>
       <div className="Navbar">
@@ -59,10 +64,14 @@ const Main = () => {
         })}
       </div>
       <div className="pagination">
-        <button class="pbutton" onClick={prev}>
+        <button class="pbutton" onClick={() => { prev()
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}>
           Prev
         </button>
-        <button class="pbutton" onClick={next}>
+        <button class="pbutton" onClick={() => { next()
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}>
           Next
         </button>
       </div>
