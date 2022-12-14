@@ -7,7 +7,7 @@ function Card({ pokemon }) {
       <div className={style}>
         <div className="poster">
           <img
-            class="poster"
+            class="poster-img"
             src={pokemon.sprites.other.dream_world.front_default}
             alt=""
           />

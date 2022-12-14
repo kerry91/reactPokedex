@@ -4,17 +4,23 @@ $accent-color: rgb(14, 14, 13);
 $navbar-color: rgba(250, 8, 8);
 $poke-card-bg-color: rgba(24, 25, 36, 0.911);
 $poke-card-color: rgba(52, 24, 216, 0.911);
-$rock: linear-gradient(to top, #c79081 0%, #dfa579 100%);
-$ghost: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-$electric: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-$bug: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
-$poison: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
-$normal: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-$fairy: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
-$fire: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-$grass: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-$water: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-$ground: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+$rock: rgb(162, 131, 72);
+$ghost: rgb(151, 83, 218);
+$electric: rgb(248, 197, 31);
+$bug: rgb(153, 166, 40);
+$poison: rgb(115, 6, 231);
+$normal: rgb(184, 184, 181);
+$fairy: rgb(225, 128, 236);
+$fire: rgb(231, 44, 6);
+$grass: rgb(37, 132, 41);
+$water: rgb(52, 52, 209);
+$ground: rgb(162, 113, 6);
+$psychic: rgb(218, 94, 205);
+$fighting: rgb(228, 130, 69);
+$ice: rgb(119, 210, 218);
+$dragon: rgb(95, 98, 241);
+$dark : rgb(106, 97, 117);
+$steel: rgb(119, 150, 160);
 
 * {
   margin: 0;
@@ -24,7 +30,6 @@ $ground: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
 }
 
 body {
-  min-height: 100vh;
   background-color: $body;
 }
 
@@ -40,26 +45,13 @@ input[type=text] {
 }
 
 .container {
-  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   align-items: center;
-  gap: 40px;
+  justify-items: center;
+  gap: 2em;
   padding: 20px;
   padding-top: 100px;
-
-  .notfound {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $text;
-    font-size: 3rem;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .filter .filter-list {
@@ -71,10 +63,9 @@ input[type=text] {
 }
 
 .poke-card {
-  border-radius: 8px !important;
+  border-radius: 8px ;
   overflow: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
   width: 300px;
   height: 300px;
 
@@ -90,9 +81,6 @@ input[type=text] {
     .box {
       height: 100%;
       max-width: 80%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       padding: 10px;
       align-items: left;
       text-transform: capitalize;
@@ -337,58 +325,89 @@ a:hover {
 }
 
 .rock {
-  background-image: $rock;
+  background-color: $rock;
 }
 
 .ghost {
-  background-image: $ghost;
+  background-color: $ghost;
 }
 
 .electric {
-  background-image: $electric;
+  background-color: $electric;
 }
 
 .bug {
-  background-image: $bug;
+  background-color: $bug;
 }
 
 .poison {
-  background-image: $poison;
+  background-color: $poison;
 }
 
 .normal {
-  background-image: $normal;
+  background-color: $normal;
 }
 
 .fairy {
-  background-image: $fairy;
+  background-color: $fairy;
 }
 
 .fire {
-  background-image: $fire;
+  background-color: $fire;
 }
 
 .grass {
-  background-image: $grass;
+  background-color: $grass;
 }
 
 .water {
-  background-image: $water;
+  background-color: $water;
 }
 
 .ground {
-  background-image: $ground;
+  background-color: $ground;
+}
+
+.psychic {
+  background-color: $psychic;
+}
+
+.fighting {
+  background-color: $fighting;
+}
+
+.ice {
+  background-color: $ice;
+}
+
+.dragon {
+  background-color: $dragon;
+}
+
+.dark {
+  background-color: $dark;
+}
+
+.steel{
+  background-color: $steel;
 }
 
 .overlay-wrapper {
   position: relative;
-  width: 50%;
+  width: 300px;
   text-transform: capitalize;
+  display: block;
 }
 
 .poster {
   width: 100%;
-  height: 100%;
+  height:100%;
+  display: block;
+}
+
+.poster-img {
+  width: 100%;
+  height:100%;
   display: block;
 }
 
@@ -406,7 +425,8 @@ a:hover {
 }
 
 .overlay-wrapper:hover .overlay {
-  height: 100%;
+  height: 300px;
+  width: 300px;
 }
 
 .text {
@@ -453,12 +473,7 @@ a:hover {
     align-items: center;
     justify-content: center;
   }
-  .overlay-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  
 }
 
 @media screen and (min-width: 667px) and (max-width: 915px) {
@@ -468,6 +483,9 @@ a:hover {
   #side-nav {
     display: flex;
     flex-direction: column;
+  }
+  .container{
+    justify-items: center;
   }
 }
 

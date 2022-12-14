@@ -53,7 +53,7 @@ const Main = () => {
         <Navbar />
       </div>
 
-      <div className="card container">
+      <div className="container">
         {pokemonData.map((pokemon, i) => {
           return <Card key={i} pokemon={pokemon} />;
         })}
